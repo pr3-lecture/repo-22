@@ -14,7 +14,16 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  sides = [a, b, c]
+  sides.each do |x|
+    if x <= 0
+      raise TriangleError, 'All sides must be greater than zero'
+    end
+  end
+
+  x, y, z = sides.sort
+  raise TriangleError if x + y <= z
+
   if a == b && b == c
     :equilateral
   elsif a == b || b == c || c == a
