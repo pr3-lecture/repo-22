@@ -16,5 +16,5 @@ crypto: main.o crypto.o
 	cc -o crypto main.o crypto.o
 test.o: test.c
 	cc -Wall -c test.c
-test: crypto.o
+test: test.o crypto.o
 	cc -o test test.o crypto.o

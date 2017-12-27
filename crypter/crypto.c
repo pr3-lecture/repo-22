@@ -37,8 +37,8 @@ int xor(KEY key, const char *input, char* output, char minValidInputChar, char m
             return E_CYPHER_ILLEGAL_CHAR;
         }
     }
-
-    for(int i = 0; input[i]; i++) {
+    int i = 0;
+    for(i = 0; input[i]; i++) {
         //get and validate current input char
         char input_char = input[i];
         if(input_char < minValidInputChar || input_char > maxValidInputChar) {
@@ -55,6 +55,7 @@ int xor(KEY key, const char *input, char* output, char minValidInputChar, char m
 
         output[i] = charFromValue(output_value);
     }
+    output[i] = '\0';
     return 0;
 }
 
