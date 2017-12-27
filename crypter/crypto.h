@@ -13,6 +13,9 @@
 /** Cypher text contains illegal characters. */
 #define E_CYPHER_ILLEGAL_CHAR 4
 
+/** Key type is illegal. */
+#define E_KEY_ILLEGAL_TYPE 5
+
 #define KEY_CHARACTERS "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define MESSAGE_CHARACTERS "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define CYPHER_CHARACTERS "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"

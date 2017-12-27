@@ -1,1 +1,6 @@
 output/
+*.o
+crypto 
+encrypt 
+decrypt 
+test
