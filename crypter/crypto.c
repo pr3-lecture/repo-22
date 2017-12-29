@@ -20,6 +20,13 @@ int checkXORKey(KEY key) {
     if(key_length < 1) {
         return E_KEY_TOO_SHORT;
     }
+    //validate key
+    for(int i = 0; i < key_length; i++) {
+        char key_char = key.chars[i];
+        if(key_char < '@' || key_char > '_') {
+            return E_CYPHER_ILLEGAL_CHAR;
+        }
+    }
     return 0;
 }
 
@@ -30,13 +37,7 @@ int xor(KEY key, const char *input, char* output, char minValidInputChar, char m
     }
 
     int key_length = strlen(key.chars);
-    //validate key
-    for(int i = 0; i < key_length; i++) {
-        char key_char = key.chars[i];
-        if(key_char < '@' || key_char > '_') {
-            return E_CYPHER_ILLEGAL_CHAR;
-        }
-    }
+    
     int i = 0;
     for(i = 0; input[i]; i++) {
         //get and validate current input char
