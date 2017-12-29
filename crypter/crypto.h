@@ -16,6 +16,13 @@
 /** Key type is illegal. */
 #define E_KEY_ILLEGAL_TYPE 5
 
+/**
+ * Converts an error code into the error message
+ * @param error error code
+ * @return a null termintate string with the error message
+ */
+char* cryptoErrorString(int error);
+
 #define KEY_CHARACTERS "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define MESSAGE_CHARACTERS "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define CYPHER_CHARACTERS "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"

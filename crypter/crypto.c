@@ -67,3 +67,14 @@ int encrypt(KEY key, const char *input, char* output) {
 int decrypt(KEY key, const char *input, char* output) {
     return xor(key, input, output, '@', '_');
 }
+
+char* cryptoErrorString(int error) {
+    switch (error) {
+        case E_KEY_TOO_SHORT: return "Length of key not sufficient.";
+        case E_KEY_ILLEGAL_CHAR: return "Key contains illegal characters.";
+        case E_MESSAGE_ILLEGAL_CHAR: return "Message contains illegal characters.";
+        case E_CYPHER_ILLEGAL_CHAR: return "Cypher text contains illegal characters.";
+        case E_KEY_ILLEGAL_TYPE: return "Key type is illegal.";
+        default: return "No error";
+    }
+}
